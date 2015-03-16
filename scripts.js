@@ -12,4 +12,10 @@ $(document).ready(function(){
         $('.register').slideToggle();
     });
     
+    $('.add-holiday').hide();
+    
+    $('.holiday-toggle').click(function() {
+        $('.add-holiday').slideToggle();
+    });
+    
 });

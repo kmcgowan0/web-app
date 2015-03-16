@@ -16,7 +16,7 @@ h2.header {
 
 #container {
     width: auto;
-    padding: 15px;
+    
     background-color: #eaeaea;
     margin-top: 10px;
 }
@@ -28,10 +28,10 @@ img.img-list {
 
 ul.img-list {
   list-style-type: none;
-  margin: 2px;
+  
   padding: 0;
   text-align: center;
-  border: 5px;
+  
     border-color: #000;
 }
  
@@ -40,9 +40,7 @@ ul.img-list li {
   margin: 0 1em 1em 0;
   position: relative;
   width: 300px;
-    border-radius: 50%;
-    shape-outside: circle();
-    shape-margin: 15px;
+  
     text-align: center;
 }
 
@@ -54,9 +52,9 @@ span.text-content {
   cursor: pointer;
   display: table;
   height: 300px;
-  left: 0;
+  left: 15px;
   position: absolute;
-  top: 0;
+  top: 15px;
   width: 300px;
   opacity: 0;
   -webkit-transition: opacity 500ms;

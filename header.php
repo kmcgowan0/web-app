@@ -8,12 +8,14 @@
     <body>
         <div class="header">
     <h2>Website</h2>
+            
 </div> 
 
 <div class="navbar">
     <ul>
         <li><a href="index.php">Home</a></li>
         <li><a href="about.php">About Us</a></li>
+        <li><a href="holidays.php">Holidays</a></li>
         </ul>
 
 </div>

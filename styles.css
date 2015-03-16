@@ -36,6 +36,11 @@ li {
     cursor: pointer;
 }
 
+.navbar {
+    top: 0;
+    position: fixed;
+}
+
 a {
     display: block;
     width: 100px;
@@ -92,6 +97,25 @@ a {
     cursor: pointer;
 }
 
+.add-holiday {
+    width: 300px;
+    padding: 15px;
+    background-color: #eaeaea;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.holiday-toggle{
+    width: 300px;
+    padding: 15px;
+    background-color: #eaeaea;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    cursor: pointer;
+}
 
 
 

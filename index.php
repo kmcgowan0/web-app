@@ -8,11 +8,15 @@
 <?php    
 
     if(isset($_POST["submit"])) {
-        $username = ($_POST["username"]);
-        $password = ($_POST["password"]);
-        $city = ($_POST["city"]);
+        $forename = ($_POST["user_forename"]);
+        $surname = ($_POST["user_surname"]);
+        $dob = ($_POST["user_dob"]);
+        $city = ($_POST["user_city"]);
+        $username = ($_POST["user_name"]);
+        $password = ($_POST["user_password"]);
+        
 
-        $query = "INSERT INTO users (username, password, city) VALUES ('{$username}','{$password}','{$city}')";
+        $query = "INSERT INTO users (user_forename, user_surname, user_dob, user_city, user_name, user_password) VALUES ('{$forename}','{$surname}','{$dob}','{$city}','{$username}','{$password}',)";
 
         $result = mysqli_query($connection, $query);
         
@@ -38,14 +42,34 @@
             <p>Don't have an account? <a href=register.php>Register</a> </p>
         </div>
 
- 
+ <div class="register-toggle">
+     <p>OR <br> Register</p>
+</div>
+     <div class="register">
+            <form action="index.php" method="post">
+                <p>Forename:</p><input type="text" name="user_forename" value=""/><br>
+                <p>Surname:</p><input type="text" name="user_surname" value=""/><br>
+                <p>Date Of Birth:</p><input type="text" name="user_dob" value=""/><br>
+                <p>City:</p><input type="text" name="user_city" value=""/><br>
+                <p>Username:</p><input type="text" name="user_name" value=""/><br>
+                <p>Password:</p><input type="text" name="user_password" value=""/><br>
+                <br>
+                <input type="submit" name="submit" value="Register"/>
+            </form>
+        </div>
+
+
 
 
 <?php
     if(isset($_POST["submit"])) {
-        echo $username ; 
-        echo $password ; 
-        echo $city ;
+        echo "Forename: $forename " ;
+        echo "Surname: $surname " ;
+        echo "Date of birth: $dob " ;
+        echo "City: $city " ;
+        echo "Username: $username " ; 
+        echo "Password: $password " ; 
+        
     }
 ?>
 
