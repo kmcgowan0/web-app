@@ -37,8 +37,37 @@ li {
 }
 
 .navbar {
-    top: 0;
-    position: fixed;
+    text-align: center;
+    background: #dfdfdf; 
+    padding: 10px;
+    margin-bottom: 10px;
+    opacity: 0.9;
+    border: 3px solid #fff;
+    min-width: 100%;
+}
+
+.navbar ul {
+    display: inline-block;
+    list-style: none; 
+    padding: 0;
+}
+
+.navbar ul li {
+    float: left;
+    margin-bottom: 15px;
+}
+
+.navbar ul li a {
+    padding: 10px 25px; 
+    background: #fff; 
+    margin-right: 5px;
+    color: #000;
+    text-decoration: none;
+}
+
+.navbar ul li a:hover {
+    background: #000;
+    color: #fff;
 }
 
 a {
