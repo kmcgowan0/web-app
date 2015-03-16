@@ -8,11 +8,11 @@
 <?php    
 
     if(isset($_POST["submit"])) {
-        $forename = ($_POST["user_forename"]);
-        $surname = ($_POST["user_surname"]);
+        $forename = ucfirst($_POST["user_forename"]);
+        $surname = ucfirst($_POST["user_surname"]);
         $dob = ($_POST["user_dob"]);
-        $city = ($_POST["user_city"]);
-        $username = ($_POST["user_name"]);
+        $city = ucfirst($_POST["user_city"]);
+        $username = ucfirst($_POST["user_name"]);
         $password = ($_POST["user_password"]);
         
 
