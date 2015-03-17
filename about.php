@@ -1,9 +1,9 @@
-<?php require_once("../includes/session.php"); ?>
-<?php require_once("../includes/connect.php"); ?>
-<?php require_once("../includes/functions.php"); ?>
-<?php include_once("../includes/templates/header.php"); ?>
+<?php require_once("session.php"); ?>
+<?php require_once("connect.php"); ?>
+<?php require_once("functions.php"); ?>
+<?php include_once("header.php"); ?>
          
-<link rel="stylesheet" href="css/about.css">
+<link rel="stylesheet" href="about.css">
         <div id="container">
              <ul class="img-list">
                 

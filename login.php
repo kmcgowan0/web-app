@@ -1,6 +1,7 @@
-<?php require_once("../includes/session.php"); ?>
-<?php require_once("../includes/connect.php"); ?>
-<?php require_once("../includes/functions.php"); ?>
+<?php require_once("session.php"); ?>
+<?php require_once("connect.php"); ?>
+<?php require_once("functions.php"); ?>
+
 <?php
 
     if(isset($_POST["login"])) {

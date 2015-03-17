@@ -1,7 +1,7 @@
-<?php require_once("../includes/session.php"); ?>
-<?php require_once("../includes/connect.php"); ?>
-<?php require_once("../includes/functions.php"); ?>
-<?php include_once("../includes/templates/header.php"); ?>
+<?php require_once("session.php"); ?>
+<?php require_once("connect.php"); ?>
+<?php require_once("functions.php"); ?>
+<?php include_once("header.php"); ?>
 
 
 <?php    
@@ -25,9 +25,13 @@
 
 <div class="register">
             <form action="index.php" method="post">
-                <p>Username:</p><input type="text" name="username" value=""/><br>
-                <p>Password:</p><input type="text" name="password" value=""/><br>
-                <p>City:</p><input type="text" name="city" value=""/><br><br>
+                <p>Forename:</p><input type="text" name="user_forename" value=""/><br>
+                <p>Surname:</p><input type="text" name="user_surname" value=""/><br>
+                <p>Date Of Birth:</p><input type="text" name="user_dob" value=""/><br>
+                <p>City:</p><input type="text" name="user_city" value=""/><br>
+                <p>Username:</p><input type="text" name="user_name" value=""/><br>
+                <p>Password:</p><input type="text" name="user_password" value=""/><br>
+                <br>
                 <input type="submit" name="submit" value="Register"/>
             </form>
         </div>
