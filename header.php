@@ -2,13 +2,16 @@
 <html>
     <head>
         <title>Project</title>
-        <link href="normal.css" rel="stylesheet">
-        <link href="styles.css" rel="stylesheet">
+        <link href="css/normal.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
     </head>
     <body>
         <div class="header">
     <h2>Website</h2>
             
 </div> 
+        <div class="nav">
+        <?php include 'nav.php'; ?>
+        </div>
 
     <?php echo message(); ?>
