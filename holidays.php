@@ -1,7 +1,7 @@
-<?php require_once("session.php"); ?>
-<?php require_once("connect.php"); ?>
-<?php require_once("functions.php"); ?>
-<?php include_once("header.php"); ?>
+<?php require_once("../includes/session.php"); ?>
+<?php require_once("../includes/connect.php"); ?>
+<?php require_once("../includes/functions.php"); ?>
+<?php include_once("../includes/templates/header.php"); ?>
 <?php    
 
     if(isset($_POST["submit"])) {
@@ -31,7 +31,7 @@
             
             <?php $title = "Box"; ?>
             
-            <?php include 'nav.php'; ?>
+            
             
             <?php if(isset($message)) { ?>
                 
@@ -58,12 +58,16 @@
                 <option value="">5</option>
                 </select>
                 <p>Tags:</p><input type="text" name="holiday_tags" value=""/><br>
-                <p>Picture:</p><input type="file" name="holiday_picture" id="holiday_picture"><br>
                 <p>Username:</p><input type="text" name="holiday_user" value=""/><br>
                 <br>
+                
+                <p>Add an image?</p><input type="file" name="holiday_picture" id="holiday_picture"><br>
+              
                 <input type="submit" name="submit" value="Add"/>
             </form>
         </div>
+    
+
 
 
 
@@ -79,14 +83,5 @@
     }
 ?>
 
-<div class="container">
-    <img src="images/img.png" />
-    <h2><?php echo ucfirst($row["holiday_location"]); ?></h2>
-    <p><?php echo ucfirst($row["holiday_description"]); ?></p>
-    <p><?php echo ucfirst($row["holiday_rating"]); ?></p>
-    <p><?php echo ucfirst($row["holiday_tags"]); ?></p>
-
-</div>
-
         
-<?php include_once("footer.php"); ?>        
+<?php require_once("../includes/templates/footer.php");?>       

@@ -1,7 +1,7 @@
-<?php require_once("session.php"); ?>
-<?php require_once("connect.php"); ?>
-<?php require_once("functions.php"); ?>
-<?php include_once("header.php"); ?>
+<?php require_once("../includes/session.php"); ?>
+<?php require_once("../includes/connect.php"); ?>
+<?php require_once("../includes/functions.php"); ?>
+<?php include_once("../includes/templates/header.php"); ?>
 
 
 
@@ -61,10 +61,6 @@
                 <input type="submit" name="submit" value="Register"/>
             </form>
         </div>
-
-
-
-
 <?php
     if(isset($_POST["submit"])) {
         echo $message;
@@ -78,6 +74,15 @@
     }
 ?>
 
+<?php 
+                
+                while($row = mysqli_fetch_assoc($result)) {
+                    
+                    include 'box.php'; 
+                    
+                }
+
+            ?>
 
         
-<?php include_once("footer.php"); ?>        
+<?php require_once("../includes/templates/footer.php");?>      
