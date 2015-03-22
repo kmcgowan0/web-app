@@ -3,7 +3,7 @@
 <?php require_once("../includes/functions.php"); ?>
 <?php include_once("../includes/templates/header.php"); ?>
          
-<link rel="stylesheet" href="about.css">
+<link rel="stylesheet" href="css/about.css">
         <div id="container">
              <ul class="img-list">
                 

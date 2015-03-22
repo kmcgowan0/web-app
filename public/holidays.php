@@ -42,9 +42,12 @@
             <?php } ?>
 
 <div class="holiday-toggle">
+    <p><a href="index.php">Login or register to add a holiday review</a></p>
+    <?php if(isset($_SESSION["user_name"])) { ?>
     <p>Add A Holiday</p>
 </div>
 <div class="add-holiday">
+    
             <form action="holidays.php" method="post">
                 <p>Location:</p><input type="text" name="holiday_location" value=""/><br>
                 <p>Description:</p><input type="text" name="holiday_description" value=""/><br>
@@ -65,6 +68,7 @@
               
                 <input type="submit" name="submit" value="Add"/>
             </form>
+    <?php } ?>
         </div>
     
 
@@ -82,6 +86,12 @@
         
     }
 ?>
+    
+    <?php 
+            include "box.php"    
+                
+
+            ?>
 
         
 <?php require_once("../includes/templates/footer.php");?>       

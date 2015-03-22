@@ -1,20 +1,21 @@
-<?php require_once("session.php"); ?>
-<?php require_once("connect.php"); ?>
-<?php require_once("functions.php"); ?>
+<?php require_once("../includes/session.php"); ?>
+<?php require_once("../includes/connect.php"); ?>
+<?php require_once("../includes/functions.php"); ?>
+
 
 <?php
 
     if(isset($_POST["login"])) {
-        $username = $_POST["username"];
-        $password = $_POST["password"];
+        $username = $_POST["user_name"];
+        $password = $_POST["user_password"];
         
-        $query = "SELECT * FROM users WHERE username='{$username}' AND password='{$password}' LIMIT 1";
+        $query = "SELECT * FROM users WHERE user_name='{$username}' AND user_password='{$password}' LIMIT 1";
         $result = mysqli_query($connection, $query); 
         
         if($user = mysqli_fetch_assoc($result)) {
-            $_SESSION["message"] = "Success, welcome back {$user["username"]}";
-            $_SESSION["username"] = $user["username"];
-            $_SESSION["user_id"] = $user["id"];
+            $_SESSION["message"] = "Success, welcome back {$user["user_name"]}";
+            $_SESSION["username"] = $user["user_name"];
+            $_SESSION["user_id"] = $user["user_id"];
           } else {
             $_SESSION["message"] = "Wrong username/password";
          
@@ -24,7 +25,10 @@
 
    
 
-    redirectTo("index.php");
-
-
+    redirectTo("../public/index.php");
 ?>
+<?php
+    if(isset($connection)) {
+        mysqli_close($connection);   
+    }
+        

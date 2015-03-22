@@ -76,11 +76,7 @@
 
 <?php 
                 
-                while($row = mysqli_fetch_assoc($result)) {
-                    
-                    include 'box.php'; 
-                    
-                }
+               
 
             ?>
 

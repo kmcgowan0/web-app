@@ -7,7 +7,7 @@
     </head>
     <body>
         <div class="header">
-    <h2>Website</h2>
+    <h2>HolidayConsultant</h2>
             
 </div> 
         <div class="nav">
