@@ -6,7 +6,6 @@
 
 
 <?php    
-
     if(isset($_POST["submit"])) {
         $forename = ucfirst($_POST["user_forename"]);
         $surname = ucfirst($_POST["user_surname"]);
@@ -18,7 +17,6 @@
         
         
             $query = "INSERT INTO users (user_forename, user_surname, user_dob, user_city, user_name, user_password) VALUES ('{$forename}', '{$surname}', '{$dob}',  '{$city}', '{$username}', '{$password}')";
-
         $result = mysqli_query($connection, $query);
         
         if($result) {
@@ -77,7 +75,6 @@
 <?php 
                 
                
-
             ?>
 
         

@@ -25,6 +25,25 @@
          </div>
      </body>
 
+<style>
+body {
+    background-image: url("holiday.jpg");
+}
+</style>
+
+<style>
+h1 {
+    text-align: center;
+}
+p.date {
+    text-align: right;
+}
+p.main {
+    text-align: justify;
+}
+       
+       </style>
+
 <footer class="footer"> <p>Thank you for reading our bios</p></footer>
 
-</html>  
+</html> 

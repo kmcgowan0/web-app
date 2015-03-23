@@ -9,6 +9,13 @@
     padding: 10px;
 }
 
+body {
+    background-image:url(../images/holiday.jpg);
+    background-color: #000;
+    
+}
+
+
 h2.header {
     text-align: center;
     padding:25px;
@@ -43,7 +50,8 @@ li {
     margin-bottom: 10px;
     opacity: 0.9;
     border: 3px solid #fff;
-    min-width: 100%;
+    
+    width: auto;
 }
 
 .navbar ul {
@@ -88,6 +96,7 @@ a {
     text-align: center;
     border-width: 7px;
     border-color: #000;
+    opacity: 0.9;
   
 }
 
@@ -102,6 +111,7 @@ a {
     border-width: 7px;
     border-color: #000;
     cursor: pointer;
+    opacity: 0.9;
   
 }
 
@@ -113,7 +123,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    
+    opacity: 0.9;
 }
 
 .register-toggle {
@@ -124,6 +134,7 @@ a {
     margin-right: auto;
     text-align: center;
     cursor: pointer;
+    opacity: 0.9;
 }
 
 .add-holiday {
@@ -134,6 +145,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    opacity: 0.9;
 }
 
 .holiday-toggle{
@@ -144,6 +156,7 @@ a {
     margin-right: auto;
     text-align: center;
     cursor: pointer;
+    opacity: 0.9;
 }
 
 .about-site {
@@ -154,6 +167,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+    opacity: 0.9;
     
 }
 

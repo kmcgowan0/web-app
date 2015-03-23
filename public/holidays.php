@@ -1,17 +1,16 @@
-<?php require_once("session.php"); ?>
-<?php require_once("connect.php"); ?>
-<?php require_once("functions.php"); ?>
-<?php include_once("header.php"); ?>
+<?php require_once("../includes/session.php"); ?>
+<?php require_once("../includes/connect.php"); ?>
+<?php require_once("../includes/functions.php"); ?>
+<?php include_once("../includes/templates/header.php"); ?>
 <?php    
     if(isset($_POST["submit"])) {
         $location = ucfirst($_POST["holiday_location"]);
         $description = ucfirst($_POST["holiday_description"]);
         $rating = ($_POST["holiday_rating"]);
         $tags = ($_POST["holiday_tags"]);
-        $picture = ($_POST["holiday_picture"]);
         $holuser = ucfirst($_POST["holiday_user"]);
         
-        $query = "INSERT INTO holiday (holiday_location, holiday_description, holiday_rating, holiday_tags, holiday_picture, holiday_user) VALUES ('{$location}','{$description}','{$rating}','{$tags}','{$picture}','{$holuser}')";
+        $query = "INSERT INTO holiday (holiday_location, holiday_description, holiday_rating, holiday_tags, holiday_user) VALUES ('{$location}','{$description}','{$rating}','{$tags}','{$holuser}')";
         $result = mysqli_query($connection, $query);
         
         if($result) {
@@ -20,6 +19,8 @@
             $message = "Something went wrong";
         }
     } 
+ini_set('session.bug_compat_warn', 0);
+ini_set('session.bug_compat_42', 0);
 ?>
 
 
@@ -57,31 +58,9 @@
                 <p>Tags:</p><input type="text" name="holiday_tags" value=""/><br>
                 <p>Username:</p><input type="text" name="holiday_user" value=""/><br>
                 <br>
-                
-                <p>Add an image?</p><input type="file" name="holiday_picture" id="holiday_picture"><br>
-              
                 <input type="submit" name="submit" value="Add"/>
             </form>
         </div>
-    
-<style>
-body {
-    background-image: url("holiday.jpg");
-}
-</style>
-
-<style>
-h1 {
-    text-align: center;
-}
-p.date {
-    text-align: right;
-}
-p.main {
-    text-align: justify;
-}
-       
-       </style>
 
 
 
@@ -91,11 +70,24 @@ p.main {
         echo "Description: $description " ;
         echo "Rating: $rating /5 " ;
         echo "Tags: $tags " ;
-        echo "Picture: $picture " ; 
+        
         echo "Username: $holuser " ; 
         
     }
 ?>
+        <?php if(isset($message)) { ?>
+                
+                <div class="box">
+                    <p><?php echo $message; ?></p>
+                </div>
+            
+            <?php } ?>
+    
+    <?php 
+            include "box.php"    
+                
+
+            ?>
 
         
 <?php include_once("../includes/templates/footer.php"); ?>  
