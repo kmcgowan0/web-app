@@ -1,9 +1,8 @@
-<?php require_once("../includes/session.php"); ?>
-<?php require_once("../includes/connect.php"); ?>
-<?php require_once("../includes/functions.php"); ?>
-<?php include_once("../includes/templates/header.php"); ?>
+<?php require_once("session.php"); ?>
+<?php require_once("connect.php"); ?>
+<?php require_once("functions.php"); ?>
+<?php include_once("header.php"); ?>
 <?php    
-
     if(isset($_POST["submit"])) {
         $location = ucfirst($_POST["holiday_location"]);
         $description = ucfirst($_POST["holiday_description"]);
@@ -12,9 +11,7 @@
         $picture = ($_POST["holiday_picture"]);
         $holuser = ucfirst($_POST["holiday_user"]);
         
-
         $query = "INSERT INTO holiday (holiday_location, holiday_description, holiday_rating, holiday_tags, holiday_picture, holiday_user) VALUES ('{$location}','{$description}','{$rating}','{$tags}','{$picture}','{$holuser}')";
-
         $result = mysqli_query($connection, $query);
         
         if($result) {
@@ -42,12 +39,9 @@
             <?php } ?>
 
 <div class="holiday-toggle">
-    <p><a href="index.php">Login or register to add a holiday review</a></p>
-    <?php if(isset($_SESSION["user_name"])) { ?>
     <p>Add A Holiday</p>
 </div>
 <div class="add-holiday">
-    
             <form action="holidays.php" method="post">
                 <p>Location:</p><input type="text" name="holiday_location" value=""/><br>
                 <p>Description:</p><input type="text" name="holiday_description" value=""/><br>
@@ -68,10 +62,29 @@
               
                 <input type="submit" name="submit" value="Add"/>
             </form>
-    <?php } ?>
         </div>
     
+<style>
+body {
+    background-image: url("holiday.jpg");
+}
+</style>
 
+<style>
+
+h1 {
+    text-align: center;
+}
+
+p.date {
+    text-align: right;
+}
+
+p.main {
+    text-align: justify;
+}
+       
+       </style>
 
 
 
@@ -86,12 +99,6 @@
         
     }
 ?>
-    
-    <?php 
-            include "box.php"    
-                
-
-            ?>
 
         
-<?php require_once("../includes/templates/footer.php");?>       
+<?php include_once("footer.php"); ?>  
