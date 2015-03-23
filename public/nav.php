@@ -7,9 +7,10 @@
 <div class="navbar">
     <ul>
         <li><a href="index.php">Home</a></li>
+        <li><a href="holidays.php">Holidays</a></li>
         <li><a href="about.php">About Us</a></li>
         <li><a href="about-site.php">About The Site</a></li>
-        <li><a href="holidays.php">Holidays</a></li>
+        
         </ul>
 
 </div>

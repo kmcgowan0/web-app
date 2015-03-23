@@ -14,7 +14,7 @@
         
         if($user = mysqli_fetch_assoc($result)) {
             $_SESSION["message"] = "Success, welcome back {$user["user_name"]}";
-            $_SESSION["username"] = $user["user_name"];
+            $_SESSION["user_name"] = $user["user_name"];
             $_SESSION["user_id"] = $user["user_id"];
           } else {
             $_SESSION["message"] = "Wrong username/password";

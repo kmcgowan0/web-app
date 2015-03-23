@@ -7,8 +7,8 @@
 <?php    
 
     if(isset($_POST["submit"])) {
-        $username = ($_POST["username"]);
-        $password = ($_POST["password"]);
+        $username = ($_POST["user_name"]);
+        $password = ($_POST["user_password"]);
         $city = ($_POST["city"]);
 
         $query = "INSERT INTO users (username, password, city) VALUES ('{$username}','{$password}','{$city}')";
