@@ -1,7 +1,7 @@
-<?php require_once("../includes/session.php"); ?>
-<?php require_once("../includes/connect.php"); ?>
-<?php require_once("../includes/functions.php"); ?>
-<?php include_once("../includes/templates/header.php"); ?>
+<?php require_once("session.php"); ?>
+<?php require_once("connect.php"); ?>
+<?php require_once("functions.php"); ?>
+<?php include_once("header.php"); ?>
          
 <link rel="stylesheet" href="css/about.css">
         <div id="container">
@@ -25,6 +25,28 @@
          </div>
      </body>
 
+<style>
+body {
+    background-image: url("holiday.jpg");
+}
+</style>
+
+<style>
+
+h1 {
+    text-align: center;
+}
+
+p.date {
+    text-align: right;
+}
+
+p.main {
+    text-align: justify;
+}
+       
+       </style>
+
 <footer class="footer"> <p>Thank you for reading our bios</p></footer>
 
-</html>  
+</html> 
