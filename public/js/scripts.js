@@ -18,4 +18,10 @@ $(document).ready(function(){
         $('.add-holiday').slideToggle();
     });
     
+    $('.logout').hide();
+    
+    $('.logout-toggle').click(function() {
+        $('.logout').slideToggle();
+    });
+    
 });

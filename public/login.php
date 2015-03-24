@@ -25,7 +25,7 @@
 
    
 
-    redirectTo("../public/index.php");
+    redirectTo("index.php");
 ?>
 <?php
     if(isset($connection)) {

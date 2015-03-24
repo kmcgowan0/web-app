@@ -20,56 +20,73 @@
         $result = mysqli_query($connection, $query);
         
         if($result) {
-            $message = "Post added";
+            $message = "Account successfully created";
         } else {
             $message = "Something went wrong";
         }
             
         }
     
-    
+    ini_set('session.bug_compat_warn', 0);
+ini_set('session.bug_compat_42', 0);
 ?>
-   
-
+<?php if(!isset($_SESSION["user_name"])) { ?> 
 <div class="login-toggle">
     <p>Login</p>
 </div>
-        <div class="login-box">
-            <form action="login.php" method="post">
-                <p>Username:</p> <input type="text" name="username" value="" /> <br>
-                <p>Password:</p> <input type="password" name="password" value="" /> <br>
-                <br>
-                <input type="submit" name="login" value="Login" />
-            </form>
+    <div class="login-box">
+        <form action="login.php" method="post">
+            <p>Username:</p> <input type="text" name="username" value="" /> <br>
+            <p>Password:</p> <input type="password" name="password" value="" /> <br>
+            <br>
+            <input type="submit" name="login" value="Login" />
+        </form>
             
-        </div>
+    </div>
 
- <div class="register-toggle">
-     <p>Don't have an account? <br> Register</p>
-</div>
-     <div class="register">
-            <form action="index.php" method="post">
-                <p>Forename:</p><input type="text" name="user_forename" value=""/><br>
-                <p>Surname:</p><input type="text" name="user_surname" value=""/><br>
-                <p>Date Of Birth:</p><input type="date" name="user_dob" value=""/><br>
-                <p>City:</p><input type="text" name="user_city" value=""/><br>
-                <p>Username:</p><input type="text" name="user_name" value=""/><br>
-                <p>Password:</p><input type="text" name="user_password" value=""/><br>
-                <br>
-                <input type="submit" name="submit" value="Register"/>
-            </form>
+    <div class="register-toggle">
+        <p>Don't have an account? <br> Register</p>
+    </div>
+    <div class="register">
+        <form action="index.php" method="post">
+            <p>Forename:</p><input type="text" name="user_forename" value=""/><br>
+            <p>Surname:</p><input type="text" name="user_surname" value=""/><br>
+            <p>Date Of Birth:</p><input type="date" name="user_dob" value=""/><br>
+            <p>City:</p><input type="text" name="user_city" value=""/><br>
+            <p>Username:</p><input type="text" name="user_name" value=""/><br>
+            <p>Password:</p><input type="text" name="user_password" value=""/><br>
+            <br>
+            <input type="submit" name="submit" value="Register"/>
+        </form>
+    </div>
+
+<?php } ?>
+
+<?php if(isset($_SESSION["user_name"])) { ?>
+    
+        <div class="logout-toggle">
+            <p>Logout</p>
+         </div>
+<div class="logout">
+    <p>Are you sure?<a href="logout.php">Logout</a></p>
         </div>
+<?php } ?>
 <?php
-    if(isset($_POST["submit"])) {
-        echo $message;
-        echo "Forename: $forename " ;
-        echo "Surname: $surname " ;
-        echo "Date of birth: $dob " ;
-        echo "City: $city " ;
-        echo "Username: $username " ; 
-        echo "Password: $password " ; 
+    if(isset($_POST["submit"])) { ?>
         
-    }
+        <div class="holidays">
+            <?php echo $message; ?>
+            <p><a href="holidays.php">Now browse our holidays, or add one of your own</a></p>
+
+</div>
+       <!-- //echo "Forename: $forename " ;
+        //echo "Surname: $surname " ;
+        //echo "Date of birth: $dob " ;
+        //echo "City: $city " ;
+        //echo "Username: $username " ; 
+        //echo "Password: $password " ; -->
+        
+ <?php   }
 ?>
 
 <?php 

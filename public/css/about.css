@@ -4,16 +4,24 @@
     font-size: 30px;
     font-family: inherit;
     width: auto;
-    height: 100px;
+    height: 80px;
     background-color: #eaeaea;
     padding: 10px;
+    opacity: 0.9;
 }
+
+body {
+    background-image:url(../images/holiday.jpg);
+    background-color: #000;
+    
+}
+
 
 h2.header {
     text-align: center;
-    padding:25px;
+    margin-top:10px;
+    
 }
-
 #container {
     width: auto;
     
@@ -89,21 +97,7 @@ p.footer {
 }
 
 
-body {
-    background-image: url("holiday.jpg");
-}
 
 
-h1 {
-    text-align: center;
-}
 
-p.date {
-    text-align: right;
-}
-
-p.main {
-    text-align: justify;
-}
-       
     
