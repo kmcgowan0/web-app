@@ -62,15 +62,15 @@ ini_set('session.bug_compat_42', 0);
     <form action="holidays.php" method="post">
         <p>Location:</p><input type="text" name="holiday_location" value=""/><br>
         <p>Description:</p><input type="text" name="holiday_description" value=""/><br>
-        <p>Rating:</p> <select name="holiday_rating">
-        <option value="">--Select--</option>
+        <p>Rating /5:</p> <input type="number" name="holiday_rating" min="0" max="5" value=""/>
+        <!--<option value="">--Select--</option>
         <option value="">0</option>
         <option value="">1</option>
         <option value="">2</option>
         <option value="">3</option>
         <option value="">4</option>
         <option value="">5</option>
-        </select>
+        </select> -->
         <p>Name:</p><input type="text" name="holiday_user" value=""/><br>
         <br>
         <input type="submit" name="submit" value="Add"/>
