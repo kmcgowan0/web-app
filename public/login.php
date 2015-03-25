@@ -4,7 +4,6 @@
 
 
 <?php
-
     if(isset($_POST["login"])) {
         $username = $_POST["user_name"];
         $password = $_POST["user_password"];
@@ -22,13 +21,10 @@
         }
        
     }
-
    
-
     redirectTo("index.php");
 ?>
 <?php
     if(isset($connection)) {
         mysqli_close($connection);   
     }
-        

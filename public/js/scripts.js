@@ -24,4 +24,10 @@ $(document).ready(function(){
         $('.logout').slideToggle();
     });
     
+    //$('.date').hide();
+    
+    //$('.date-toggle').click(function() {
+       // $('.date').slideToggle();
+    //});
+    
 });

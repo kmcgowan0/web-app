@@ -9,7 +9,7 @@
         $rating = ($_POST["holiday_rating"]);
         $holuser = ucfirst($_POST["holiday_user"]);
         
-        $query = "INSERT INTO holiday (holiday_location, holiday_description, holiday_rating, , holiday_user) VALUES ('{$location}','{$description}','{$rating}','{$holuser}')";
+        $query = "INSERT INTO holiday (holiday_location, holiday_description, holiday_rating, holiday_user) VALUES ('{$location}','{$description}','{$rating}','{$holuser}')";
         $result = mysqli_query($connection, $query);
         
         if($result) {
@@ -21,6 +21,31 @@
 ini_set('session.bug_compat_warn', 0);
 ini_set('session.bug_compat_42', 0);
 ?>
+<?php 
+
+    if(isset($_POST["date"])) {
+        $sort = $_POST["sort-by"];
+        
+        if(strcmp($sort, "new") == 0) {
+            $query = "SELECT * FROM holiday ORDER BY holiday_id DESC";
+        } else if (strcmp($sort, "best") == 0) {
+            $query = "SELECT * FROM holiday ORDER BY holiday_rating DESC";
+        }
+        
+    } else {
+        $query = "SELECT * FROM holiday ORDER BY holiday_id DESC";
+    }
+    
+
+    
+    $result = mysqli_query($connection, $query); 
+
+    if(!$result) {
+        die("Query Error");  
+    }
+
+?>
+
 
 
         
@@ -34,23 +59,38 @@ ini_set('session.bug_compat_42', 0);
     <p>Add A Holiday</p>
 </div>
 <div class="add-holiday">
+    <form action="holidays.php" method="post">
+        <p>Location:</p><input type="text" name="holiday_location" value=""/><br>
+        <p>Description:</p><input type="text" name="holiday_description" value=""/><br>
+        <p>Rating:</p> <select name="holiday_rating">
+        <option value="">--Select--</option>
+        <option value="">0</option>
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+        <option value="">5</option>
+        </select>
+        <p>Name:</p><input type="text" name="holiday_user" value=""/><br>
+        <br>
+        <input type="submit" name="submit" value="Add"/>
+    </form>
+</div>
+
+
+
+
+        <div class="sort">
+            <p>Sort Holidays</p>
             <form action="holidays.php" method="post">
-                <p>Location:</p><input type="text" name="holiday_location" value=""/><br>
-                <p>Description:</p><input type="text" name="holiday_description" value=""/><br>
-                <p>Rating:</p> <select name="holiday_rating">
-                <option value="">--Select--</option>
-                <option value="">0</option>
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-                <option value="">4</option>
-                <option value="">5</option>
+                <select name="sort-by">
+                    <option value="new">By Date</option>
+                    <option value="best">By Rating</option>
                 </select>
-                <p>Name:</p><input type="text" name="holiday_user" value=""/><br>
-                <br>
-                <input type="submit" name="submit" value="Add"/>
+                <input type="submit" name="date" value="Sort" />
             </form>
         </div>
+    
 
 
 
@@ -65,18 +105,17 @@ ini_set('session.bug_compat_42', 0);
         
     }
 ?>-->
-        <?php if(isset($message)) { ?>
-                
-                <div class="box">
-                    <p><?php echo $message; ?></p>
-                </div>
-            
-            <?php } ?>
+<?php if(isset($message)) { ?>
+
+    <div class="box">
+        <p><?php echo $message; ?></p>
+    </div>
+
+<?php } ?>
     
     <?php 
             include "box.php"    
                 
-
             ?>
 
         

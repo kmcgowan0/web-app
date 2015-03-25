@@ -212,6 +212,14 @@ a {
     opacity: 1.0;
 }
 
+.logout a {
+    display: block;
+    width: 300px;
+    text-decoration: none;
+    color: #000;
+    text-align: center;
+}
+
 .add-holiday {
     width: 300px;
     padding: 15px;
@@ -239,6 +247,18 @@ a {
 .holiday-toggle:hover {
     border: 3px solid #000;
     opacity: 1.0;
+}
+
+.sort {
+    width: 300px;
+    padding: 15px;
+    background-color: #eaeaea;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    opacity: 0.9;
+    border: 3px solid #fff;
 }
 
 .about-site {
@@ -285,7 +305,3 @@ a {
 .clearfix {
     clear: both:
 }
-
-
-
-

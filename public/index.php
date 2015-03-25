@@ -11,12 +11,12 @@
         $surname = ucfirst($_POST["user_surname"]);
         $dob = ($_POST["user_dob"]);
         $city = ucfirst($_POST["user_city"]);
-        $username = ucfirst($_POST["user_name"]);
+        $username = ($_POST["user_name"]);
         $password = ($_POST["user_password"]);
         
         
         
-            $query = "INSERT INTO users (user_forename, user_surname, user_dob, user_city, user_name, user_password) VALUES ('{$forename}', '{$surname}', '{$dob}',  '{$city}', '{$username}', '{$password}')";
+            $query = "INSERT INTO users (user_forename, user_surname, user_dob, user_city, user_name, user_password) VALUES ('{$forename}', '{$surname}', '{$dob}', '{$city}', '{$username}', '{$password}')";
         $result = mysqli_query($connection, $query);
         
         if($result) {
@@ -27,17 +27,18 @@
             
         }
     
-    ini_set('session.bug_compat_warn', 0);
+ini_set('session.bug_compat_warn', 0);
 ini_set('session.bug_compat_42', 0);
 ?>
+
 <?php if(!isset($_SESSION["user_name"])) { ?> 
-<div class="login-toggle">
-    <p>Login</p>
-</div>
+    <div class="login-toggle">
+        <p>Login</p>
+    </div>
     <div class="login-box">
         <form action="login.php" method="post">
-            <p>Username:</p> <input type="text" name="username" value="" /> <br>
-            <p>Password:</p> <input type="password" name="password" value="" /> <br>
+            <p>Username:</p> <input type="text" name="user_name" value="" /> <br>
+            <p>Password:</p> <input type="password" name="user_password" value="" /> <br>
             <br>
             <input type="submit" name="login" value="Login" />
         </form>
@@ -64,19 +65,24 @@ ini_set('session.bug_compat_42', 0);
 
 <?php if(isset($_SESSION["user_name"])) { ?>
     
-        <div class="logout-toggle">
-            <p>Logout</p>
-         </div>
-<div class="logout">
-    <p>Are you sure?<a href="logout.php">Logout</a></p>
+<div class="holidays">
+        
+        <p><a href="holidays.php">Now browse our holidays, or add one of your own</a></p>
+
+</div>
+    <div class="logout-toggle">
+        <p>Logout</p>
+     </div>
+    <div class="logout">
+        <p><a href="logout.php">Are you sure? Logout</a></p>
         </div>
 <?php } ?>
 <?php
     if(isset($_POST["submit"])) { ?>
         
         <div class="holidays">
-            <?php echo $message; ?>
-            <p><a href="holidays.php">Now browse our holidays, or add one of your own</a></p>
+            <p><?php echo $message; ?>
+            <a href="holidays.php">Now browse our holidays, or add one of your own</a></p>
 
 </div>
        <!-- //echo "Forename: $forename " ;
@@ -86,13 +92,9 @@ ini_set('session.bug_compat_42', 0);
         //echo "Username: $username " ; 
         //echo "Password: $password " ; -->
         
- <?php   }
-?>
+ <?php  } ?>
 
-<?php 
-                
-               
-            ?>
+
 
         
 <?php require_once("../includes/templates/footer.php");?>      
