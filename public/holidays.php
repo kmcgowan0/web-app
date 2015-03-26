@@ -21,30 +21,7 @@
 ini_set('session.bug_compat_warn', 0);
 ini_set('session.bug_compat_42', 0);
 ?>
-<?php 
 
-    if(isset($_POST["date"])) {
-        $sort = $_POST["sort-by"];
-        
-        if(strcmp($sort, "new") == 0) {
-            $query = "SELECT * FROM holiday ORDER BY holiday_id DESC";
-        } else if (strcmp($sort, "best") == 0) {
-            $query = "SELECT * FROM holiday ORDER BY holiday_rating DESC";
-        }
-        
-    } else {
-        $query = "SELECT * FROM holiday ORDER BY holiday_id DESC";
-    }
-    
-
-    
-    $result = mysqli_query($connection, $query); 
-
-    if(!$result) {
-        die("Query Error");  
-    }
-
-?>
 
 
 
@@ -77,10 +54,10 @@ ini_set('session.bug_compat_42', 0);
             <p>Sort Holidays</p>
             <form action="holidays.php" method="post">
                 <select name="sort-by">
-                    <option value="new">By Date</option>
+                    <option value="new">Most Recent</option>
                     <option value="best">By Rating</option>
                 </select>
-                <input type="submit" name="date" value="Sort" />
+                <input type="submit" name="sort" value="Sort" />
             </form>
         </div>
     
@@ -100,7 +77,7 @@ ini_set('session.bug_compat_42', 0);
 ?>-->
 <?php if(isset($message)) { ?>
 
-    <div class="box">
+    <div class="success">
         <p><?php echo $message; ?></p>
     </div>
 

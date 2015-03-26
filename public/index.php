@@ -35,6 +35,7 @@ ini_set('session.bug_compat_42', 0);
     <div class="login-toggle">
         <p>Login</p>
     </div>
+
     <div class="login-box">
         <form action="login.php" method="post">
             <p>Username:</p> <input type="text" name="user_name" value="" /> <br>
@@ -48,6 +49,7 @@ ini_set('session.bug_compat_42', 0);
     <div class="register-toggle">
         <p>Don't have an account? <br> Register</p>
     </div>
+
     <div class="register">
         <form action="index.php" method="post">
             <p>Forename:</p><input type="text" name="user_forename" value=""/><br>
@@ -65,32 +67,27 @@ ini_set('session.bug_compat_42', 0);
 
 <?php if(isset($_SESSION["user_name"])) { ?>
     
-<div class="holidays">
-        
+    <div class="holidays">
         <p><a href="holidays.php">Now browse our holidays, or add one of your own</a></p>
+    </div>
 
-</div>
     <div class="logout-toggle">
         <p>Logout</p>
      </div>
+
     <div class="logout">
         <p><a href="logout.php">Are you sure? Logout</a></p>
-        </div>
+    </div>
+
 <?php } ?>
+
 <?php
     if(isset($_POST["submit"])) { ?>
         
         <div class="holidays">
             <p><?php echo $message; ?>
             <a href="holidays.php">Now browse our holidays, or add one of your own</a></p>
-
-</div>
-       <!-- //echo "Forename: $forename " ;
-        //echo "Surname: $surname " ;
-        //echo "Date of birth: $dob " ;
-        //echo "City: $city " ;
-        //echo "Username: $username " ; 
-        //echo "Password: $password " ; -->
+        </div>
         
  <?php  } ?>
 

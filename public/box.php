@@ -8,6 +8,28 @@
   <?php  
     $sql = "SELECT holiday_location, holiday_description, holiday_rating, holiday_user FROM holiday";
 $result = mysqli_query($connection, $sql) or die("Error: ".mysqli_error($connection));
+
+    if(isset($_POST["sort"])) {
+        $sort = $_POST["sort-by"];
+        
+        if(strcmp($sort, "new") == 0) {
+            $query = "SELECT * FROM holiday ORDER BY holiday_id DESC";
+        } else if (strcmp($sort, "best") == 0) {
+            $query = "SELECT * FROM holiday ORDER BY holiday_rating DESC";
+        }
+        $result = mysqli_query($connection, $query); 
+    } else {
+        $query = "SELECT * FROM holiday ORDER BY holiday_id DESC";
+    }
+    
+
+    
+    
+
+    if(!$result) {
+        die("Query Error");  
+    }
+
 while($row = mysqli_fetch_array($result))
 { ?>
     <div class="box">
