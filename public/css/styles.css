@@ -5,10 +5,17 @@
     font-family: inherit;
     width: auto;
     height: 80px;
-    background-color: #eaeaea;
+    background-color: #83C2F5;
     padding: 10px;
     opacity: 0.9;
 }
+
+.container p {
+    color: #000;
+	font-family: monospace;
+    font-size: 14px;
+}
+
 
 body {
     background-image:url(../images/holiday.jpg);
@@ -230,6 +237,11 @@ a {
     text-align: center;
     opacity: 0.9;
     border: 3px solid #fff;
+}
+
+.add-holiday:hover {
+    border: 3px solid #000;
+    opacity: 1.0;
 }
 
 .holiday-toggle{
